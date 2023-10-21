@@ -67,7 +67,8 @@ void LongueFonctionAvecBeaucoupDeParametres(int premier_parametre,
     int    variable7                  = 8;
     String longueVariablePourLExemple = "Blablabla";
 
-    // Les conditions des boucles conditionnelles doivent également être alignées avec le if (sans espace entre le if et la paranthèse !)
+    // Les conditions des boucles conditionnelles doivent également être
+    // alignées avec le if (sans espace entre le if et la parenthèse !)
     if(variable1 == 5
     && variable2 == 6
     && variable4 == "Test")
