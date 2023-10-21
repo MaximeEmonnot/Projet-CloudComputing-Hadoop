@@ -22,8 +22,8 @@ Dans certains cas, une variable doit être définie dans une casse spéficique. 
 |---------------------------|----------------------|-------------|
 | Classe                    | PascalCase           | Par défaut en Java
 | Interface                 | PascalCase           | Par défaut en Java
-| Fonction                  | PamelCase            | Permet d'obtenir de belles lignes comme ```premiereVariable.FonctionA()``` où chaque nouveau mot commence bien par une majuscule. Malheureusement, les fonctions par défaut en Java utilisent le camelCase... J'ai jamais aimé ce langage de toute façon
-| Membre de classe             | camelCase_           | Par habitude pour Manon. Ajoutons tout de même un `_` à la fin pour bien montrer qu'il s'agit d'un membre de classe
+| Fonction                  | PascalCase           | Permet d'obtenir de belles lignes comme ```premiereVariable.FonctionA()``` où chaque nouveau mot commence bien par une majuscule. Malheureusement, les fonctions par défaut en Java utilisent le camelCase... J'ai jamais aimé ce langage de toute façon
+| Membre de classe          | camelCase_           | Par habitude pour Manon. Ajoutons tout de même un `_` à la fin pour bien montrer qu'il s'agit d'un membre de classe
 | Argument de fonction      | snake_case           | Pour les différencier des membres de classe
 | Variable locale           | camelCase            | Par habitude pour Manon. La différenciation précédente pour les membres de classe s'explique donc ici
 | Variable statique globale | SCREAMING_SNAKE_CASE | Cette pratique est très moche. Une variable ne devrait **JAMAIS** être statique et globale. Ceci pointe donc du doigt cette pratique pour dire *"Oui nous savons que c'est très moche, mais nous n'avons pas trouvé mieux"*. **IMPORTANT** : Lire ces variables devant son écran en criant bien leur nom, et en rajoutant `C'EST MOCHE` 😉
