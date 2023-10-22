@@ -47,7 +47,7 @@ void LongueFonctionAvecBeaucoupDeParametres(int premier_parametre,
                                             int quatrieme_parametre)
 {
     // Ici, nous avons aligné les arguments, car il aurait été nécessaire d'utiliser la
-    // barre verticale pour lire la suite.
+    // barre de défilement horizontale pour lire la suite.
 
     /* 
      * Un commentaire en plusieurs ligne est également aligné par rapport au caractère '*'
