@@ -60,8 +60,8 @@ void LongueFonctionAvecBeaucoupDeParametres(int premier_parametre,
     String    variable4;
 
     // ... ou bien par rapport à l'opérateur d'initialisation ...
-    String variable5         = new String();
-    HashSet<Float> variable6 = new HashSet<Float>();
+    HashSet<Float> longueVariable5 = new HashSet<Float>();
+    HashSet<Float> variable6       = new HashSet<Float>();
 
     // ... ou bien les deux.
     int    variable7                  = 8;
