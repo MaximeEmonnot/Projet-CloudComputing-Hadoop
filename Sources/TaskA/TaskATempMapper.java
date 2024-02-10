@@ -9,6 +9,10 @@ import java.io.IOException;
 
 import javax.naming.Context;
 
+/**
+ * Mapper du job de génération de fichier temporaire de la tâche A
+ * @author Manon Lacombe
+ */
 public class TaskATempMapper extends Mapper<LongWritable, Text, Text, DoubleWritable> 
 {
 
