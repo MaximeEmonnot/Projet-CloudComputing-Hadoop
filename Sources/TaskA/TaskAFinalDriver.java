@@ -31,12 +31,13 @@ public class TaskAFinalDriver extends Configured implements Tool {
         }
 
         Scanner scanner = new Scanner(System.in);
-
+        //Interacton utilisateur pour obtenir le semestre
         do {
             System.out.print("Veuillez entrer une valeur pour le Semestre (sous la forme S0x avec x un chiffre): ");
             semestre = scanner.nextLine();
         } while (!isValidSemestre(semestre));
 
+        //Interacton utilisateur pour obtenir l'année
         do {
             System.out.print("Veuillez entrer une valeur pour l' Annee (4 chiffres)");
             Annee = scanner.nextLine();
@@ -66,17 +67,19 @@ public class TaskAFinalDriver extends Configured implements Tool {
         return job.waitForCompletion(true) ? 0 : 1;
     }
 
+    //Méthode de validation du format du semestre
     private boolean isValidSemestre(String semestre) {
         String regex = "^S0\\d{1}$"; 
         Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(userValue);
+        Matcher matcher = pattern.matcher(semestre);
         return matcher.matches();
     }
 
+    //Méthode de validation du format du semestre
     private boolean isValidAnnee(String Annee) {
         String regex = "^\\d{4}$"; 
         Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(userValue);
+        Matcher matcher = pattern.matcher(Annee);
         return matcher.matches();
     }
 }
