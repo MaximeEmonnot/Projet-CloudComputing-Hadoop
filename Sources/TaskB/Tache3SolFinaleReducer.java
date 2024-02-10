@@ -1,4 +1,4 @@
-package Sources.TaskA;
+package Sources.TaskB;
 
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
@@ -10,15 +10,13 @@ public class Tache2SolFinaleReducer extends Reducer<Text, LongWritable, Text, Te
 
     public void reduce(Text key, Iterable<LongWritable> values, Context context) throws IOException,
             InterruptedException {
-        long totalNotes = 0;
-        long notesValides=0;
-        for (LongWritable note : values) {
-            totalNotes++;
-            if(note>=10){
-                notesValides++;
-            }
+        long count = 0;
+        long sum=0;
+        for (LongWritable taux : values) {
+            count++;
+            sum+=taux;
         }
-        long taux = notesValides/totalNotes;
-        context.write(key+" - "+taux, new Text(""));
+        long moyenne = sum/count;
+        context.write(key+" - "+moyenne, new Text(""));  // Nom UE - Moyenne
     }
 }

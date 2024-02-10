@@ -1,11 +1,11 @@
-package Sources.TaskA;
+package Sources.TaskB;
 
 import org.apache.hadoop.util.ToolRunner;
 
-public class Tache2FichierTemp {
+public class Tache3SolFinale {
 
     public static void main(String[] args) throws Exception {
-        int exitCode = ToolRunner.run(new Tache2FichierTempDriver(), args);
+        int exitCode = ToolRunner.run(new Tache2SolFinaleDriver(), args);
         System.exit(exitCode);
     }
 }
