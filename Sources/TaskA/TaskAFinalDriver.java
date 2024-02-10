@@ -13,35 +13,43 @@ import org.apache.hadoop.util.ToolRunner;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * Driver du job de génération de la tâche A
  * @author Manon Lacombe
  */
-public class TaskAFinalDriver extends Configured implements Tool {
+public class TaskAFinalDriver extends Configured implements Tool 
+{
 
-    public int run(String[] args) throws Exception {
+    public int run(String[] args) throws Exception 
+    {
         // Vérification du nombre d'arguments utilisés dans la commande Hadoop
-        if (args.length != 2) {
+        if (args.length != 2) 
+        {
             System.out.printf("Usage: %s <INPUT> <OUTPUT>\n", getClass().getSimpleName());
             ToolRunner.printGenericCommandUsage(System.out);
             return -1;
         }
 
         Scanner scanner = new Scanner(System.in);
-        //Interacton utilisateur pour obtenir le semestre
-        do {
+        // Interacton utilisateur pour obtenir le semestre
+        String semestre = "";
+        do 
+        {
             System.out.print("Veuillez entrer une valeur pour le Semestre (sous la forme S0x avec x un chiffre): ");
             semestre = scanner.nextLine();
-        } while (!isValidSemestre(semestre));
+        } 
+        while (!isValidSemestre(semestre));
 
-        //Interacton utilisateur pour obtenir l'année
-        do {
+        // Interacton utilisateur pour obtenir l'année
+        String annee = "";
+        do 
+        {
             System.out.print("Veuillez entrer une valeur pour l' Annee (4 chiffres)");
-            Annee = scanner.nextLine();
-        } while (!isValidAnnee(Annee));        
+            annee = scanner.nextLine();
+        } 
+        while (!isValidAnnee(annee)); 
+        scanner.close();      
 
         // Instanciation du job
         Job job = Job.getInstance();
@@ -49,7 +57,7 @@ public class TaskAFinalDriver extends Configured implements Tool {
         job.setJobName("Tache A Solution Finale");
 
         // Définition des chemins d'entrée et de sortie
-        FileInputFormat.addInputPath(job, new Path(args[0]));
+        FileInputFormat .addInputPath(job, new Path(args[0]));
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
         
         // Définition du Mapper et du Reducer
@@ -60,24 +68,27 @@ public class TaskAFinalDriver extends Configured implements Tool {
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(IntWritable.class);
 
+        // Définition des paramètres
         job.getConfiguration().set("semestre", semestre);
-        job.getConfiguration().set("Annee", Annee);
+        job.getConfiguration().set("annee", annee);
 
         // Exécution du job
         return job.waitForCompletion(true) ? 0 : 1;
     }
 
-    //Méthode de validation du format du semestre
-    private boolean isValidSemestre(String semestre) {
-        String regex = "^S0\\d{1}$"; 
+    // Méthode de validation du format du semestre
+    private boolean isValidSemestre(String semestre) 
+    {
+        String regex    = "^S0\\d{1}$"; 
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(semestre);
         return matcher.matches();
     }
 
-    //Méthode de validation du format du semestre
-    private boolean isValidAnnee(String Annee) {
-        String regex = "^\\d{4}$"; 
+    // Méthode de validation du format du semestre
+    private boolean isValidAnnee(String Annee) 
+    {
+        String regex    = "^\\d{4}$"; 
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(Annee);
         return matcher.matches();

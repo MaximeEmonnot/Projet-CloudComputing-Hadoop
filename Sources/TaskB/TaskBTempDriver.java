@@ -10,21 +10,18 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
 
-import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 /**
  * Driver du job de génération de fichier temporaire de la tâche B
  * @author Manon Lacombe
  */
-public class TaskBTempDriver extends Configured implements Tool {
+public class TaskBTempDriver extends Configured implements Tool 
+{
 
-    public int run(String[] args) throws Exception {
+    public int run(String[] args) throws Exception 
+    {
         // Vérification du nombre d'arguments utilisés dans la commande Hadoop
-        if (args.length != 2) {
+        if (args.length != 2) 
+        {
             System.out.printf("Usage: %s <INPUT> <OUTPUT>\n", getClass().getSimpleName());
             ToolRunner.printGenericCommandUsage(System.out);
             return -1;
@@ -36,7 +33,7 @@ public class TaskBTempDriver extends Configured implements Tool {
         job.setJobName("Tache B Fichier Temporaire");
         
         // Définition des chemins d'entrée et de sortie
-        FileInputFormat.addInputPath(job, new Path(args[0]));
+        FileInputFormat .addInputPath(job, new Path(args[0]));
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
         
         // Définition du Mapper et du Reducer

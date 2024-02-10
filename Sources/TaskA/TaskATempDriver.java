@@ -14,11 +14,13 @@ import org.apache.hadoop.util.ToolRunner;
  * Driver du job de génération de fichier temporaire de la tâche A
  * @author Manon Lacombe
  */
-public class TaskATempDriver extends Configured implements Tool {
+public class TaskATempDriver extends Configured implements Tool 
+{
 
     public int run(String[] args) throws Exception {
         // Vérification du nombre d'arguments utilisés dans la commande Hadoop
-        if (args.length != 2) {
+        if (args.length != 2) 
+        {
             System.out.printf("Usage: %s <INPUT> <OUTPUT>\n", getClass().getSimpleName());
             ToolRunner.printGenericCommandUsage(System.out);
             return -1;
@@ -29,7 +31,7 @@ public class TaskATempDriver extends Configured implements Tool {
         job.setJobName("Tache A Fichier Temporaire");
         
         // Définition des chemins d'entrée et de sortie
-        FileInputFormat.addInputPath(job, new Path(args[0]));
+        FileInputFormat .addInputPath(job, new Path(args[0]));
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
         
         // Définition du Mapper et du Reducer
