@@ -2,22 +2,95 @@
 Projet dans le cadre du Master 1 BDMA à Blois.  
 Réalisé par Manon LACOMBE, Axel BRUNEL et Maxime EMONNOT.
 
-Ce projet consiste à apporter une solution permettant de traiter convenablement un problème de base de données, étant donné certaines contraintes de volume, de matériel, et de demandes spécifiques. Ces contraintes constituent une certaine problématique, et il est donc nécessaire d’apporter la solution la plus adéquate pour la résoudre.
-
-Nous avons choisi de traiter ce problème en utilisant HDFS et avons choisi de répondre aux tâche 2, 3 et 4 proposées dans le cadre du projet : 
-Tâche  2 : Sortir le taux de réussite de notes d’un semestre selon l’année scolaire.
-Tâche 3 : Sortir le taux de réussite d’une UE depuis sa création par rapport à ses différents noms.
-Tâche 4 : Sortir les taux de réussite de toutes les UE assurées par un(e) intervenant(e).
-
-## Commandes pour lancer les jobs
-
 ## Table des matières
 
+- [Présentation](#présentation)
+- [Structure du dépôt](#structure-du-dépôt)
 - [Conventions](#conventions)
     * [Casse des variables](#casse-des-variables)
     * [Langue des fichiers](#langue-des-fichiers)
     * [Alignements](#alignements)
     * [Commentaires](#commentaires)
+- [Commandes Hadoop](#commandes-hadoop)
+
+## Présentation
+
+Ce projet consiste à apporter une solution permettant de traiter convenablement un problème de base de données, étant donné certaines contraintes de volume, de matériel, et de demandes spécifiques. Ces contraintes constituent une certaine problématique, et il est donc nécessaire d’apporter la solution la plus adéquate pour la résoudre.
+
+Au cours de ce projet, nous devions définir l'architecture adoptée, que ce soit au niveau de la technologie de stockage et de la structure des fichiers de données. Nous avons ainsi choisi d'utiliser **HDFS**, avec des fichiers dont les lignes suivent cette structure : 
+- Ligne étudiant : 
+    * E;Num étudiant;Année;Promotion;Nom;Prénom;Date de naissance;Email;Numéro de téléphone;Adresse
+- Ligne UE : 
+    * U;Code UE;Année;Nom UE;Enseignant1,Enseignant2,Enseignant3,…
+- Ligne Note : 
+    * N;Code UE;Année;Num étudiant;Note
+
+Nous devions également choisir 3 requêtes à traiter parmi les 5 suivantes : 
+1. Sortir le relevé de notes selon un numéro d’étudiant et une année scolaire
+2. Sortir le taux de réussite de notes d’un semestre selon l’année scolaire
+3. Sortir le taux de réussite d’une UE depuis sa création par rapport à ses différents noms
+4. Sortir les taux de réussite de toutes les UE assurées par un intervenant
+5. Sortir le classement d’étudiants par rapport à leurs notes moyennes selon la promotion et l’année scolaire
+
+Nous avons donc choisi de traiter les requêtes 2, 3 et 4.
+
+Ce README présentera l'ensemble du dépôt, à savoir : 
+- La structure du dépôt
+- Les conventions de code pour notre organisation
+- Les commandes sur le cluster Hadoop pour l'exécution des jobs 
+
+## Structure du dépôt
+Le dépôt suit la structure suivante : 
+```
+🗂️ Projet-CloudComputing-Hadoop
+|
++-- 📂 Données
+|   +-- 📜 etudiants.txt
+|   +-- 📜 notes.txt
+|   +-- 📜 ue.txt
+|
++-- 📂 Sources
+|   +-- 📂 TaskA
+|   |   +-- ☕ TaskATempMain.java
+|   |   +-- ☕ TaskATempDriver.java
+|   |   +-- ☕ TaskATempMapper.java
+|   |   +-- ☕ TaskATempReducer.java
+|   |   +-- ☕ TaskAFinalMain.java
+|   |   +-- ☕ TaskAFinalDriver.java
+|   |   +-- ☕ TaskAFinalMapper.java
+|   |   +-- ☕ TaskAFinalReducer.java
+|   |
+|   +-- 📂 TaskB
+|   |   +-- ☕ TaskBTempMain.java
+|   |   +-- ☕ TaskBTempDriver.java
+|   |   +-- ☕ TaskBTempMapper.java
+|   |   +-- ☕ TaskBTempReducer.java
+|   |   +-- ☕ TaskBFinalMain.java
+|   |   +-- ☕ TaskBFinalDriver.java
+|   |   +-- ☕ TaskBFinalMapper.java
+|   |   +-- ☕ TaskBFinalReducer.java
+|   |
+|   +-- 📂 TaskC
+|       +-- ☕ TaskCTempMain.java
+|       +-- ☕ TaskCTempDriver.java
+|       +-- ☕ TaskCTempMapper.java
+|       +-- ☕ TaskCTempReducer.java
+|       +-- ☕ TaskCFinalMain.java
+|       +-- ☕ TaskCFinalDriver.java
+|       +-- ☕ TaskCFinalMapper.java
+|       +-- ☕ TaskCFinalReducer.java
+|
++-- 📂 Builds
+|   +-- 📦 TaskATemp.jar
+|   +-- 📦 TaskAFinal.jar
+|   +-- 📦 TaskBTemp.jar
+|   +-- 📦 TaskBFinal.jar
+|   +-- 📦 TaskCTemp.jar
+|   +-- 📦 TaskCFinal.jar
+|
++-- 📜 README.md
++-- 📜 Rapport.pdf
+```
 
 ## Conventions
 
@@ -139,3 +212,5 @@ La rédaction d'un commentaire doit suivre ces règles :
  * 12. quand même définie.
  */
 ```
+
+## Commandes Hadoop

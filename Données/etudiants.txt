@@ -1,10 +1,10 @@
-E ;2017000001 ;L1 ;Trou           ;Duke   ;07/02/1999 ;duke.trou@hotmail.fr            ;0612121212 ;15, rue des Juifs 41000 Blois
-E ;2018000002 ;L1 ;Beaubordelle ;Justin ;13/08/2000 ;justin.beaubordelle@gmail.com ;0678912345 ;10, rue des Juifs 41000 Blois
-E ;2016000083 ;L2 ;Kul            ;Teoman ;21/05/1998 ;teoman.kul@gmail.com            ;0606060606 ;8, rue de Flandres 41000 Blois
-E ;2015000152 ;L2 ;Peter          ;Ila    ;09/09/1997 ;ila.peter@outlook.com           ;0677777777 ;12, rue Duguay Trouin 41000 Blois
-E ;2017000001 ;L3 ;Trou           ;Duke   ;07/02/1999 ;duke.trou@hotmail.fr            ;0612121212 ;15, rue des Juifs 41000 Blois
-E ;2017000001 ;L3 ;Trou           ;Duke   ;07/02/1999 ;duke.trou@hotmail.fr            ;0612121212 ;15, rue des Juifs 41000 Blois
-E ;2017000001 ;M1 ;Trou           ;Duke   ;07/02/1999 ;duke.trou@hotmail.fr            ;0612121212 ;15, rue des Juifs 41000 Blois
-E ;2017000001 ;M1 ;Trou           ;Duke   ;07/02/1999 ;duke.trou@hotmail.fr            ;0612121212 ;15, rue des Juifs 41000 Blois
-E ;2017000001 ;M2 ;Trou           ;Duke   ;07/02/1999 ;duke.trou@hotmail.fr            ;0612121212 ;15, rue des Juifs 41000 Blois
-E ;2017000001 ;M2 ;Trou           ;Duke   ;07/02/1999 ;duke.trou@hotmail.fr            ;0612121212 ;15, rue des Juifs 41000 Blois
+E;2017000001;L1;Trou;Duke;07/02/1999;duke.trou@hotmail.fr;0612121212;15, rue des Juifs 41000 Blois
+E;2018000002;L1;Beaubordelle;Justin;13/08/2000;justin.beaubordelle@gmail.com;0678912345;10, rue des Juifs 41000 Blois
+E;2016000083;L2;Kul;Teoman;21/05/1998;teoman.kul@gmail.com;0606060606;8, rue de Flandres 41000 Blois
+E;2015000152;L2;Peter;Ila;09/09/1997;ila.peter@outlook.com;0677777777;12, rue Duguay Trouin 41000 Blois
+E;2017000001;L3;Trou;Duke;07/02/1999;duke.trou@hotmail.fr;0612121212;15, rue des Juifs 41000 Blois
+E;2017000001;L3;Trou;Duke;07/02/1999;duke.trou@hotmail.fr;0612121212;15, rue des Juifs 41000 Blois
+E;2017000001;M1;Trou;Duke;07/02/1999;duke.trou@hotmail.fr;0612121212;15, rue des Juifs 41000 Blois
+E;2017000001;M1;Trou;Duke;07/02/1999;duke.trou@hotmail.fr;0612121212;15, rue des Juifs 41000 Blois
+E;2017000001;M2;Trou;Duke;07/02/1999;duke.trou@hotmail.fr;0612121212;15, rue des Juifs 41000 Blois
+E;2017000001;M2;Trou;Duke;07/02/1999;duke.trou@hotmail.fr;0612121212;15, rue des Juifs 41000 Blois
