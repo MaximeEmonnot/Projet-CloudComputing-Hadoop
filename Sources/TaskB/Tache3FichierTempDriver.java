@@ -1,4 +1,4 @@
-package bdma.bigdata.mapreduce;
+package Sources.TaskB;
 
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.Path;

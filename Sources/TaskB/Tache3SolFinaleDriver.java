@@ -48,7 +48,7 @@ public class Tache3SolFinaleDriver extends Configured implements Tool {
     }
 
     private boolean isValidCodeUE(String codeUE) {
-        String regex = "^S0\\d{1}[A-B]\d{3}$"; 
+        String regex = "^S0\\d{1}[A-B]\\d{3}$"; 
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(userValue);
         return matcher.matches();

@@ -1,4 +1,4 @@
-package bdma.bigdata.mapreduce;
+package Sources.TaskB;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
