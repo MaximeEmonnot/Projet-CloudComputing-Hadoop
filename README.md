@@ -2,6 +2,15 @@
 Projet dans le cadre du Master 1 BDMA à Blois.  
 Réalisé par Manon LACOMBE, Axel BRUNEL et Maxime EMONNOT.
 
+Ce projet consiste à apporter une solution permettant de traiter convenablement un problème de base de données, étant donné certaines contraintes de volume, de matériel, et de demandes spécifiques. Ces contraintes constituent une certaine problématique, et il est donc nécessaire d’apporter la solution la plus adéquate pour la résoudre.
+
+Nous avons choisi de traiter ce problème en utilisant HDFS et avons choisi de répondre aux tâche 2, 3 et 4 proposées dans le cadre du projet : 
+Tâche  2 : Sortir le taux de réussite de notes d’un semestre selon l’année scolaire.
+Tâche 3 : Sortir le taux de réussite d’une UE depuis sa création par rapport à ses différents noms.
+Tâche 4 : Sortir les taux de réussite de toutes les UE assurées par un(e) intervenant(e).
+
+## Commandes pour lancer les jobs
+
 ## Table des matières
 
 - [Conventions](#conventions)
