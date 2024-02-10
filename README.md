@@ -57,6 +57,11 @@ Le dépôt suit la structure suivante :
 |   +-- 📜 notes.txt
 |   +-- 📜 ue.txt
 |
++-- 📂 Lib
+|   +-- 📚 hadoop-annotations-3.3.6.jar
+|   +-- 📚 hadoop-common-3.3.6.jar
+|   +-- 📚 hadoop-mapreduce-client-core-3.3.6.jar
+|
 +-- 📂 Sources
 |   +-- 📂 TaskA
 |   |   +-- ☕ TaskATempDriver.java
