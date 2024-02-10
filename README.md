@@ -231,7 +231,7 @@ Voici une liste de certaines commandes pour le bon fonctionnement du projet.
 
 Afin de compiler les jobs pour nos 3 tâches A, B et C, un fichier Makefile a été créé pour simplifier ce processus.
 
-Voici une liste de commandes : 
+Voici une liste des commandes : 
 | Commande | Action |
 |----------|--------|
 | `make`     | Exécute la compilation par défaut (all) 
