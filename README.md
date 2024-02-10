@@ -11,7 +11,10 @@ Réalisé par Manon LACOMBE, Axel BRUNEL et Maxime EMONNOT.
     * [Langue des fichiers](#langue-des-fichiers)
     * [Alignements](#alignements)
     * [Commentaires](#commentaires)
-- [Commandes Hadoop](#commandes-hadoop)
+- [Commandes](#commandes)
+    * [Compiler les jobs](#compiler-les-jobs)
+    * [Copier les fichiers de données](#copier-les-fichiers-de-données)
+    * [Exécuter les jobs](#exécuter-les-jobs)
 
 ## Présentation
 
@@ -19,11 +22,11 @@ Ce projet consiste à apporter une solution permettant de traiter convenablement
 
 Au cours de ce projet, nous devions définir l'architecture adoptée, que ce soit au niveau de la technologie de stockage et de la structure des fichiers de données. Nous avons ainsi choisi d'utiliser **HDFS**, avec des fichiers dont les lignes suivent cette structure : 
 - Ligne étudiant : 
-    * E;Num étudiant;Année;Promotion;Nom;Prénom;Date de naissance;Email;Numéro de téléphone;Adresse
+    * ```E;Num étudiant;Année;Promotion;Nom;Prénom;Date de naissance;Email;Numéro de téléphone;Adresse```
 - Ligne UE : 
-    * U;Code UE;Année;Nom UE;Enseignant1,Enseignant2,Enseignant3,…
+    * ```U;Code UE;Année;Nom UE;Enseignant1,Enseignant2,Enseignant3,…```
 - Ligne Note : 
-    * N;Code UE;Année;Num étudiant;Note
+    * ```N;Code UE;Année;Num étudiant;Note```
 
 Nous devions également choisir 3 requêtes à traiter parmi les 5 suivantes : 
 1. Sortir le relevé de notes selon un numéro d’étudiant et une année scolaire
@@ -93,6 +96,7 @@ Le dépôt suit la structure suivante :
 |       +-- ☕ TaskCTempMapper.java
 |       +-- ☕ TaskCTempReducer.java
 |
++-- 📜 .gitignore
 +-- 📜 Makefile
 +-- 📜 Rapport.pdf
 +-- 📜 README.md
@@ -219,4 +223,66 @@ La rédaction d'un commentaire doit suivre ces règles :
  */
 ```
 
-## Commandes Hadoop
+## Commandes
+
+Voici une liste de certaines commandes pour le bon fonctionnement du projet.
+
+### Compiler les jobs
+
+Afin de compiler les jobs pour nos 3 tâches A, B et C, un fichier Makefile a été créé pour simplifier ce processus.
+
+Voici une liste de commandes : 
+| Commande | Action |
+|----------|--------|
+| `make`     | Exécute la compilation par défaut (all) 
+| `make all` | Exécute la compilation pour les tâches A, B et C à la suite
+| `make task-a` | Exécute la compilation des jobs pour la tâche A (Temp et Final)
+| `make task-a-temp` | Exécute la compilation du job de génération de fichier temporaire pour la tâche A
+| `make task-a-final` | Exécute la compilation du job de génération du fichier final pour la tâche A
+| `make task-b` | Exécute la compilation des jobs pour la tâche B (Temp et Final)
+| `make task-b-temp` | Exécute la compilation du job de génération de fichier temporaire pour la tâche B
+| `make task-b-final` | Exécute la compilation du job de génération du fichier final pour la tâche B
+| `make task-c` | Exécute la compilation des jobs pour la tâche C (Temp et Final)
+| `make task-c-temp` | Exécute la compilation du job de génération de fichier temporaire pour la tâche C
+| `make task-c-final` | Exécute la compilation du job de génération du fichier final pour la tâche C
+
+### Copier les fichiers de données
+Afin de copier les données, plusieurs processus sont nécessaires.  
+Tout d'abord, il est bien évidemment indispensable de se connecter au cluster Hadoop. Pour ce faire, il est nécessaire d'utiliser un outil FTP tel que FileZilla, et de se connecter avec les paramètres suivants : 
+
+| Hôte         | Nom d'utilisateur | Mot de passe | Port  |
+|--------------|-------------------|--------------|-------|
+|  sftp://vera | hadoop            | hadoop       | 49872 |
+
+Une fois la connexion réalisée, nous pouvons transférer les fichiers des dossiers `Builds` et `Données` dans un dossier dans `/home/hadoop/` (Pour la suite, appelons ce dossier `exemple`)
+
+Une fois les fichiers transférés, nous pouvons copier les fichiers de données dans le système de fichier Hadoop. Pour cela, nous pouvons utiliser les commandes suivantes : 
+```bash
+hadoop fs -copyFromLocal /home/hadoop/exemple/etudiants.txt Data/etudiants.txt
+```
+```bash
+hadoop fs -copyFromLocal /home/hadoop/exemple/ue.txt Data/ue.txt
+```
+```bash
+hadoop fs -copyFromLocal /home/hadoop/exemple/notes.txt Data/notes.txt
+```
+
+Nous pourrons ensuite exécuter les différents jobs.
+
+### Exécuter les jobs
+
+Pour exécuter les différents jobs, nous devrions procéder de la manière suivante : 
+1. Exécuter le job de génération de fichier temporaire pour une tâche
+2. Récupérer le fichier temporaire
+3. Exécuter le job de génération de solution finale pour une tâche, à partir du fichier temporaire
+
+Cependant, ces tâches étant fastidieuses, nous pourrons simplement réaliser la commande 3 (des fichiers temporaires ont déjà été créés dans `Data/Temp[A|B|C]`) : 
+```bash
+hadoop jar TaskAFinal.jar Sources.TaskA.TaskAFinalMain Data/TempA Result/TaskA  
+```
+```bash
+hadoop jar TaskBFinal.jar Sources.TaskB.TaskBFinalMain Data/TempB Result/TaskB  
+```
+```bash
+hadoop jar TaskCFinal.jar Sources.TaskC.TaskCFinalMain Data/TempC Result/TaskC  
+```

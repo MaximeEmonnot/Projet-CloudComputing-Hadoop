@@ -23,7 +23,5 @@ public class TaskCFinalMapper extends Mapper<LongWritable, Text, Text, Text>
 
         notes.forEach(note -> context.write(new Text(values[0]), new Text(note)));
 
-        }
-        
-    
+    }
 }
