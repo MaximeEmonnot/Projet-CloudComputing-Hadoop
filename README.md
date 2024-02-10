@@ -231,6 +231,16 @@ Voici une liste de certaines commandes pour le bon fonctionnement du projet.
 
 Afin de compiler les jobs pour nos 3 tâches A, B et C, un fichier Makefile a été créé pour simplifier ce processus.
 
+Il est par ailleurs nécessaire d'installer le package `make` au préalable : 
+- Windows : 
+    ```scoop install make```
+- MacOS :
+    ```brew install make```
+- ArchLinux :
+    ```sudo pacman -S make```
+- Debian : 
+    ```sudo apt install make```
+
 Voici une liste des commandes : 
 | Commande | Action |
 |----------|--------|
