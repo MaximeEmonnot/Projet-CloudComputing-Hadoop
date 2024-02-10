@@ -1,6 +1,6 @@
 # Projet-CloudComputing-Hadoop
 Projet dans le cadre du Master 1 BDMA à Blois.  
-Réalisé par Manon LACOMBE et Maxime EMONNOT.
+Réalisé par Manon LACOMBE, Axel BRUNEL et Maxime EMONNOT.
 
 ## Table des matières
 
