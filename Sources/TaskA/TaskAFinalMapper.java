@@ -9,6 +9,10 @@ import java.io.IOException;
 
 import javax.naming.Context;
 
+/**
+ * Mapper du job de la requête A
+ * @author Manon Lacombe
+ */
 public class TaskAFinalMapper extends Mapper<LongWritable, Text, Text, DoubleWritable> 
 {
     private String semestre = "";
