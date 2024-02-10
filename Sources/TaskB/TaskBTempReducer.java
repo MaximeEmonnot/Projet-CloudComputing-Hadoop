@@ -30,8 +30,8 @@ public class TaskBTempReducer extends Reducer<Text, Text, Text, Text>
                 //Ajout de la valeur v à la ariable sum
                 sum += Integer.parseInt(v.toString());
             }
-            else // Sinon codeUE est égale à v
-                codeUE = v.toString();
+            else // Sinon v est égal à nomUE
+                nomUE = v.toString();
         }
         // Calcul du taux de réussite
         double tauxReussite = sum / count;

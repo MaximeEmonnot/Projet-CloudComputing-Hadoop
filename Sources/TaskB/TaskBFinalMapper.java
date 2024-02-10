@@ -31,8 +31,8 @@ public class TaskBFinalMapper extends Mapper<LongWritable, Text, Text, Text>
         // Condition si codeUE correspond à la valeur entrée par l'utilisateur
         if(values[0].equals(codeUE))
         {
-            // Renvoi du codeUE associé aux taux de réussite
-            context.write(new Text(values[0]), new Text(values[2]));
+            // Renvoi du nomUE associé aux taux de réussite
+            context.write(new Text(values[1]), new Text(values[2]));
         }
     }
 }

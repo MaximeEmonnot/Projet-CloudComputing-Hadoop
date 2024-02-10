@@ -27,7 +27,7 @@ public class TaskBFinalReducer extends Reducer<Text, Text, Text, Text>
         }
         // Calcul de la moyenne
         double moyenne = sum / count;
-        // Renvoi de la nouvelle clé de type codeUE - moyenne associée à une valeur chaine vide
+        // Renvoi de la nouvelle clé de type nomUE - moyenne associée à une valeur chaine vide
         context.write(new Text(key + " - " + String.valueOf(moyenne)), new Text(""));  // Nom UE - Moyenne
     }
 }

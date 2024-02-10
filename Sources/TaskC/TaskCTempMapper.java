@@ -29,7 +29,7 @@ public class TaskCTempMapper extends Mapper<LongWritable, Text, Text, Text>
         {
             String[] values = value.toString().split(";"); // N;Code UE;Année;Num étudiant;Note
             String newKey = values[1] + "/" + values[2];
-            context.write(new Text(newKey), new Text(Double.parseDouble(values[4]) >= 10 ? "1" : "0"));
+            context.write(new Text(newKey), new Text(values[4]));
         }
     }
 }

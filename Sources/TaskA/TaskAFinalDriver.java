@@ -2,7 +2,6 @@ package Sources.TaskA;
 
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.Path;
-import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
@@ -36,7 +35,7 @@ public class TaskAFinalDriver extends Configured implements Tool
         String semestre = "";
         do 
         {
-            System.out.print("Veuillez entrer une valeur pour le Semestre (sous la forme S0x avec x un chiffre): ");
+            System.out.print("Veuillez entrer une valeur pour le semestre (sous la forme Sxx avec x le numéro du semestre): ");
             semestre = scanner.nextLine();
         } 
         while (!isValidSemestre(semestre));
@@ -45,7 +44,7 @@ public class TaskAFinalDriver extends Configured implements Tool
         String annee = "";
         do 
         {
-            System.out.print("Veuillez entrer une valeur pour l' Annee (4 chiffres)");
+            System.out.print("Veuillez entrer une valeur pour l'année (4 chiffres): ");
             annee = scanner.nextLine();
         } 
         while (!isValidAnnee(annee)); 
@@ -66,7 +65,7 @@ public class TaskAFinalDriver extends Configured implements Tool
         
         // Définition des types d'entrée et de sortie
         job.setOutputKeyClass(Text.class);
-        job.setOutputValueClass(IntWritable.class);
+        job.setOutputValueClass(Text.class);
 
         // Définition des paramètres
         job.getConfiguration().set("semestre", semestre);

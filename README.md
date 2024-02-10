@@ -56,6 +56,11 @@ Le dépôt suit la structure suivante :
 |   +-- 📦 TaskCTemp.jar
 |
 +-- 📂 Données
+|   +-- 📂 Temp
+|   |   +-- 📜 tempA.txt
+|   |   +-- 📜 tempB.txt
+|   |   +-- 📜 tempC.txt
+|   |
 |   +-- 📜 etudiants.txt
 |   +-- 📜 notes.txt
 |   +-- 📜 ue.txt

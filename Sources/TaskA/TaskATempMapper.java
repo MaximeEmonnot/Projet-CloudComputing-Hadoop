@@ -19,6 +19,7 @@ public class TaskATempMapper extends Mapper<LongWritable, Text, Text, Text>
         {
             // Division des éléments contenus dans value
             String[] values = value.toString().split(";"); // N ; CodeUE ; Année ; NumEtudiant ; Note
+            System.out.println(values.length);
             // Création de la nouvelle clé de type Année;(3ers caractère)CodeUE;NumEtudiant
             String newKey = values[2] + ";" + values[1].substring(0, 3) + ";" + values[3];
             // Renvoi de la nouvelle clé associée aux notes

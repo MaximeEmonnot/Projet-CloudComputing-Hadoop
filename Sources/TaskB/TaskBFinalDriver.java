@@ -2,7 +2,6 @@ package Sources.TaskB;
 
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.Path;
-import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
@@ -36,7 +35,7 @@ public class TaskBFinalDriver extends Configured implements Tool
         String codeUE = "";
         do 
         {
-            System.out.print("Veuillez entrer une valeur pour le code de l'UE (sous la forme S0x avec x un chiffre): ");
+            System.out.print("Veuillez entrer une valeur pour le code de l'UE (sous la forme Sxx[A-B]yyy avec x et y en tant que chiffres): ");
             codeUE = scanner.nextLine();
         } 
         while (!isValidCodeUE(codeUE));       
@@ -57,7 +56,7 @@ public class TaskBFinalDriver extends Configured implements Tool
         
         // Définition des types d'entrée et de sortie
         job.setOutputKeyClass(Text.class);
-        job.setOutputValueClass(IntWritable.class);
+        job.setOutputValueClass(Text.class);
 
         // Définition des paramètres
         job.getConfiguration().set("codeUE", codeUE);

@@ -29,7 +29,7 @@ public class TaskCTempReducer extends Reducer<Text, Text, Text, Text>
                 ueName = val[0];
             }
             else
-                notes += notes.isEmpty() ? "," : "" + v.toString(); 
+                notes += (notes.isEmpty() ? "" : ",") + v.toString(); 
         }
 
         for(String teacher : teachers)
