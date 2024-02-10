@@ -15,16 +15,21 @@ public class TaskCTempMapper extends Mapper<LongWritable, Text, Text, Text>
     @Override
     public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException
     {
-        if(value.getString().charAt(0).equals("U"))
+        if(value.toString().charAt(0) == 'U')
         {
-            String[] values = value.getString().split(";"); // U;Code UE;Année;Nom UE;Enseignant1,Enseignant2,Enseignant3,…
-            String newK = values[1] + "/" + values[2];
-            context.write(new Text(newK), new Text(line));
+            String[] values = value.toString().split(";"); // U;Code UE;Année;Nom UE;Enseignant1,Enseignant2,Enseignant3,…
+            for(String teacher : values[4].split(","))
+            {
+                String newKey = values[1] + "/" + values[2];
+                String val    = values[3] + ";" + teacher;
+                context.write(new Text(newKey), new Text(val)); 
+            }
         }
-        else if(value.getString().charAt(0).equals("N")){
-            String[] values = value.getString().split(";"); // N;Code UE;Année;Num étudiant;Note
-            String newK = values[1] + "/" + values[2];
-            context.write(new Text(newK), new Text(note > 10 ? "1" : "0"));
+        else if(value.toString().charAt(0) == 'N')
+        {
+            String[] values = value.toString().split(";"); // N;Code UE;Année;Num étudiant;Note
+            String newKey = values[1] + "/" + values[2];
+            context.write(new Text(newKey), new Text(Double.parseDouble(values[4]) >= 10 ? "1" : "0"));
         }
     }
 }

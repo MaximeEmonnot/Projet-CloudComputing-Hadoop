@@ -25,6 +25,8 @@ public class TaskAFinalMapper extends Mapper<LongWritable, Text, Text, Text>
 
     public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException 
     {
+        setup(context);
+
         // Division des éléments contenu dans value
         String[] values = value.toString().split(";"); // Année ; Semestre ; NumEtudiant ; Moyenne
         

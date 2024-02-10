@@ -9,7 +9,7 @@ TASK_A_SRC  := ./Sources/TaskA
 TASK_B_SRC  := ./Sources/TaskB
 TASK_C_SRC  := ./Sources/TaskC
 
-default: all clean
+default: all
 
 all: task-a task-b task-c
 

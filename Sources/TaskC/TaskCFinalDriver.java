@@ -1,5 +1,7 @@
 package Sources.TaskC;
 
+import java.util.Scanner;
+
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.Text;
@@ -27,6 +29,13 @@ public class TaskCFinalDriver extends Configured implements Tool
             return -1;
         }
 
+        Scanner scanner = new Scanner(System.in);
+        //Interaction utilisateur  pour obtenir le codeUE
+        String teacher = "";
+        System.out.print("Veuillez entrer une valeur pour l'intervenant: ");
+        teacher = scanner.nextLine();      
+        scanner.close();
+
         // Instanciation du job
         Job job = Job.getInstance();
         job.setJarByClass(TaskCFinalDriver.class);
@@ -43,6 +52,9 @@ public class TaskCFinalDriver extends Configured implements Tool
         // Définition des types d'entrée et de sortie
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(Text.class);
+
+        // Définition des paramètres
+        job.getConfiguration().set("teacher", teacher);
 
         // Exécution du job
         return job.waitForCompletion(true) ? 0 : 1;

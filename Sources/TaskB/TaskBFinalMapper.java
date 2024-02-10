@@ -12,10 +12,10 @@ import java.io.IOException;
  */
 public class TaskBFinalMapper extends Mapper<LongWritable, Text, Text, Text> 
 {
-    //Initialisation des variables
+    // Initialisation des variables
     private String codeUE = "";
 
-    //Méthode pour récupérer les valeurs rentrées par l'utilisateur
+    // Méthode pour récupérer les valeurs rentrées par l'utilisateur
     public void setup(Context context)
     {
         codeUE = context.getConfiguration().get("codeUE");
@@ -23,6 +23,8 @@ public class TaskBFinalMapper extends Mapper<LongWritable, Text, Text, Text>
 
     public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException 
     {
+        setup(context);
+
         // Division des éléments contenus dans value
         String[] values = value.toString().split(";"); // CodeUE ; NomUE ; TauxRéussite
         

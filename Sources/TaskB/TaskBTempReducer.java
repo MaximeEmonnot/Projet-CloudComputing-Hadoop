@@ -31,10 +31,7 @@ public class TaskBTempReducer extends Reducer<Text, Text, Text, Text>
                 sum += Integer.parseInt(v.toString());
             }
             else // Sinon codeUE est égale à v
-            {
-                
                 codeUE = v.toString();
-            }
         }
         // Calcul du taux de réussite
         double tauxReussite = sum / count;
