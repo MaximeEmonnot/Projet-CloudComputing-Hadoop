@@ -8,7 +8,7 @@ import java.io.IOException;
 
 import javax.naming.Context;
 
-public class Tache3FichierTempReducer extends Reducer<Text, LongWritable, Text, Text> {
+public class TaskBTempReducer extends Reducer<Text, LongWritable, Text, Text> {
 
     public void reduce(Text key, Text values, Context context) throws IOException,
             InterruptedException {

@@ -9,7 +9,7 @@ import java.io.IOException;
 
 import javax.naming.Context;
 
-public class Tache3FichierTempMapper extends Mapper<LongWritable, Text, Text, Text> 
+public class TaskBTempMapper extends Mapper<LongWritable, Text, Text, Text> 
 {
     public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException 
     {

@@ -1,4 +1,4 @@
-package Sources.TaskB;
+package Sources.TaskA;
 
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.Path;
@@ -16,7 +16,7 @@ import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Tache3SolFinaleDriver extends Configured implements Tool {
+public class TaskAFinalDriver extends Configured implements Tool {
 
     public int run(String[] args) throws Exception {
         if (args.length != 2) {
@@ -28,27 +28,40 @@ public class Tache3SolFinaleDriver extends Configured implements Tool {
         Scanner scanner = new Scanner(System.in);
 
         do {
-            System.out.print("Veuillez entrer une valeur pour le code de l'UE (sous la forme S0x avec x un chiffre): ");
+            System.out.print("Veuillez entrer une valeur pour le Semestre (sous la forme S0x avec x un chiffre): ");
             semestre = scanner.nextLine();
-        } while (!isValidCodeUE(codeUE));       
+        } while (!isValidSemestre(semestre));
+
+        do {
+            System.out.print("Veuillez entrer une valeur pour l' Annee (4 chiffres)");
+            Annee = scanner.nextLine();
+        } while (!isValidAnnee(Annee));        
 
         Job job = Job.getInstance();
-        job.setJarByClass(Tache3SolFinaleDriver.class);
-        job.setJobName("Tache 3 Solution Finale");
+        job.setJarByClass(TaskAFinalDriver.class);
+        job.setJobName("Tache A Solution Finale");
         FileInputFormat.addInputPath(job, new Path(args[0]));
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
-        job.setMapperClass(Tache3SolFinaleMapper.class);
-        job.setReducerClass(Tache3SolFinaleReducer.class);
+        job.setMapperClass(TaskAFinalMapper.class);
+        job.setReducerClass(TaskAFinalReducer.class);
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(IntWritable.class);
 
-        job.getConfiguration().set("codeUE", codeUE);
+        job.getConfiguration().set("semestre", semestre);
+        job.getConfiguration().set("Annee", Annee);
 
         return job.waitForCompletion(true) ? 0 : 1;
     }
 
-    private boolean isValidCodeUE(String codeUE) {
-        String regex = "^S0\\d{1}[A-B]\\d{3}$"; 
+    private boolean isValidSemestre(String semestre) {
+        String regex = "^S0\\d{1}$"; 
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(userValue);
+        return matcher.matches();
+    }
+
+    private boolean isValidAnnee(String Annee) {
+        String regex = "^\\d{4}$"; 
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(userValue);
         return matcher.matches();

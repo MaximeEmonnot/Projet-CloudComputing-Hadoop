@@ -9,7 +9,7 @@ import java.io.IOException;
 
 import javax.naming.Context;
 
-public class Tache3SolFinaleMapper extends Mapper<LongWritable, Text, Text, Text> 
+public class TaskBFinalMapper extends Mapper<LongWritable, Text, Text, Text> 
 {
     private String codeUE = "";
 

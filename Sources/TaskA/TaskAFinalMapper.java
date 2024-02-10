@@ -9,7 +9,7 @@ import java.io.IOException;
 
 import javax.naming.Context;
 
-public class Tache2SolFinaleMapper extends Mapper<LongWritable, Text, Text, DoubleWritable> 
+public class TaskAFinalMapper extends Mapper<LongWritable, Text, Text, DoubleWritable> 
 {
     private String semestre = "";
     private String annee="";
