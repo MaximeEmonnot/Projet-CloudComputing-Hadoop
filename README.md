@@ -93,6 +93,7 @@ Le dépôt suit la structure suivante :
 |       +-- ☕ TaskCTempMapper.java
 |       +-- ☕ TaskCTempReducer.java
 |
++-- 📜 Makefile
 +-- 📜 Rapport.pdf
 +-- 📜 README.md
 ```
