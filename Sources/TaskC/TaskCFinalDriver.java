@@ -10,7 +10,7 @@ import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
 
 /**
- * Driver du job de génération de fichier temporaire
+ * Driver du job de la requête C
  * @author Maxime Emonnot
  */
 public class TaskCFinalDriver extends Configured implements Tool
