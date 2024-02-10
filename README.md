@@ -44,6 +44,14 @@ Le dépôt suit la structure suivante :
 ```
 🗂️ Projet-CloudComputing-Hadoop
 |
++-- 📂 Builds
+|   +-- 📦 TaskAFinal.jar
+|   +-- 📦 TaskATemp.jar
+|   +-- 📦 TaskBFinal.jar
+|   +-- 📦 TaskBTemp.jar
+|   +-- 📦 TaskCFinal.jar
+|   +-- 📦 TaskCTemp.jar
+|
 +-- 📂 Données
 |   +-- 📜 etudiants.txt
 |   +-- 📜 notes.txt
@@ -51,45 +59,37 @@ Le dépôt suit la structure suivante :
 |
 +-- 📂 Sources
 |   +-- 📂 TaskA
-|   |   +-- ☕ TaskATempMain.java
 |   |   +-- ☕ TaskATempDriver.java
+|   |   +-- ☕ TaskATempMain.java
 |   |   +-- ☕ TaskATempMapper.java
 |   |   +-- ☕ TaskATempReducer.java
-|   |   +-- ☕ TaskAFinalMain.java
 |   |   +-- ☕ TaskAFinalDriver.java
+|   |   +-- ☕ TaskAFinalMain.java
 |   |   +-- ☕ TaskAFinalMapper.java
 |   |   +-- ☕ TaskAFinalReducer.java
 |   |
 |   +-- 📂 TaskB
-|   |   +-- ☕ TaskBTempMain.java
 |   |   +-- ☕ TaskBTempDriver.java
+|   |   +-- ☕ TaskBTempMain.java
 |   |   +-- ☕ TaskBTempMapper.java
 |   |   +-- ☕ TaskBTempReducer.java
-|   |   +-- ☕ TaskBFinalMain.java
 |   |   +-- ☕ TaskBFinalDriver.java
+|   |   +-- ☕ TaskBFinalMain.java
 |   |   +-- ☕ TaskBFinalMapper.java
 |   |   +-- ☕ TaskBFinalReducer.java
 |   |
 |   +-- 📂 TaskC
-|       +-- ☕ TaskCTempMain.java
 |       +-- ☕ TaskCTempDriver.java
+|       +-- ☕ TaskCTempMain.java
 |       +-- ☕ TaskCTempMapper.java
 |       +-- ☕ TaskCTempReducer.java
-|       +-- ☕ TaskCFinalMain.java
 |       +-- ☕ TaskCFinalDriver.java
+|       +-- ☕ TaskCFinalMain.java
 |       +-- ☕ TaskCFinalMapper.java
 |       +-- ☕ TaskCFinalReducer.java
 |
-+-- 📂 Builds
-|   +-- 📦 TaskATemp.jar
-|   +-- 📦 TaskAFinal.jar
-|   +-- 📦 TaskBTemp.jar
-|   +-- 📦 TaskBFinal.jar
-|   +-- 📦 TaskCTemp.jar
-|   +-- 📦 TaskCFinal.jar
-|
-+-- 📜 README.md
 +-- 📜 Rapport.pdf
++-- 📜 README.md
 ```
 
 ## Conventions
