@@ -9,6 +9,10 @@ import java.io.IOException;
 
 import javax.naming.Context;
 
+/**
+ * Mapper du job de la requête B
+ * @author Manon Lacombe
+ */
 public class TaskBFinalMapper extends Mapper<LongWritable, Text, Text, Text> 
 {
     private String codeUE = "";
