@@ -64,34 +64,34 @@ Le dépôt suit la structure suivante :
 |
 +-- 📂 Sources
 |   +-- 📂 TaskA
-|   |   +-- ☕ TaskATempDriver.java
-|   |   +-- ☕ TaskATempMain.java
-|   |   +-- ☕ TaskATempMapper.java
-|   |   +-- ☕ TaskATempReducer.java
 |   |   +-- ☕ TaskAFinalDriver.java
 |   |   +-- ☕ TaskAFinalMain.java
 |   |   +-- ☕ TaskAFinalMapper.java
 |   |   +-- ☕ TaskAFinalReducer.java
+|   |   +-- ☕ TaskATempDriver.java
+|   |   +-- ☕ TaskATempMain.java
+|   |   +-- ☕ TaskATempMapper.java
+|   |   +-- ☕ TaskATempReducer.java
 |   |
 |   +-- 📂 TaskB
-|   |   +-- ☕ TaskBTempDriver.java
-|   |   +-- ☕ TaskBTempMain.java
-|   |   +-- ☕ TaskBTempMapper.java
-|   |   +-- ☕ TaskBTempReducer.java
 |   |   +-- ☕ TaskBFinalDriver.java
 |   |   +-- ☕ TaskBFinalMain.java
 |   |   +-- ☕ TaskBFinalMapper.java
 |   |   +-- ☕ TaskBFinalReducer.java
+|   |   +-- ☕ TaskBTempDriver.java
+|   |   +-- ☕ TaskBTempMain.java
+|   |   +-- ☕ TaskBTempMapper.java
+|   |   +-- ☕ TaskBTempReducer.java
 |   |
 |   +-- 📂 TaskC
-|       +-- ☕ TaskCTempDriver.java
-|       +-- ☕ TaskCTempMain.java
-|       +-- ☕ TaskCTempMapper.java
-|       +-- ☕ TaskCTempReducer.java
 |       +-- ☕ TaskCFinalDriver.java
 |       +-- ☕ TaskCFinalMain.java
 |       +-- ☕ TaskCFinalMapper.java
 |       +-- ☕ TaskCFinalReducer.java
+|       +-- ☕ TaskCTempDriver.java
+|       +-- ☕ TaskCTempMain.java
+|       +-- ☕ TaskCTempMapper.java
+|       +-- ☕ TaskCTempReducer.java
 |
 +-- 📜 Rapport.pdf
 +-- 📜 README.md
