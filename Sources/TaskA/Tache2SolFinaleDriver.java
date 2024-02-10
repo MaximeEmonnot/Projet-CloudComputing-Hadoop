@@ -30,7 +30,7 @@ public class Tache2SolFinaleDriver extends Configured implements Tool {
         do {
             System.out.print("Veuillez entrer une valeur pour le Semestre (sous la forme S0x avec x un chiffre): ");
             semestre = scanner.nextLine();
-        } while (!isValidUserSemestre(semestre));
+        } while (!isValidSemestre(semestre));
 
         do {
             System.out.print("Veuillez entrer une valeur pour l' Annee (4 chiffres)");
