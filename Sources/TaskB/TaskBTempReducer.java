@@ -20,8 +20,7 @@ public class TaskBTempReducer extends Reducer<Text, LongWritable, Text, Text> {
         String codeUE = keys[0];
 
         for (LongWritable v : values) {
-            if(v.size()==1){  // v vaut soit 0, soit 1, soit le nom de l’UE. On ne 
-                                //traite que 0 et 1 dans cette condition.
+            if(v.size()==1){  // v vaut soit 0, soit 1, soit le nom de l’UE. On ne traite que 0 et 1 dans cette condition.
                 count++;
                 sum+=v.toInt();
             }
@@ -30,6 +29,6 @@ public class TaskBTempReducer extends Reducer<Text, LongWritable, Text, Text> {
             }
         }
         long tauxReussite = sum/count;
-        context.write(codeUE+";"+nomUE+";"+tauxReussite, new Text(""));
+        context.write(new Text(codeUE + ";" + nomUE + ";" + tauxReussite), new Text(""));
     }
 }
