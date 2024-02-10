@@ -29,7 +29,7 @@ public class TaskATempReducer extends Reducer<Text, LongWritable, Text, Text> {
         }
         //Calcul de la moyenne
         long moyenne = sum/num;
-        //Renvoye de la nouvelle clé de type  Année;(3ers caractère)CodeUE;NumEtudiant;moyenne associée à une valeur chaine vide
+        //Renvoye de la nouvelle clé de type Année;(3ers caractère)CodeUE;NumEtudiant;moyenne associée à une valeur chaine vide
         context.write(key+";"+moyenne, new Text(""));
     }
 }

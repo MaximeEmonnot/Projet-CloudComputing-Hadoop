@@ -31,7 +31,7 @@ public class TaskBFinalDriver extends Configured implements Tool {
         }
 
         Scanner scanner = new Scanner(System.in);
-
+        //Interaction utilisateur  pour obtenir le codeUE
         do {
             System.out.print("Veuillez entrer une valeur pour le code de l'UE (sous la forme S0x avec x un chiffre): ");
             semestre = scanner.nextLine();
@@ -59,6 +59,7 @@ public class TaskBFinalDriver extends Configured implements Tool {
         return job.waitForCompletion(true) ? 0 : 1;
     }
 
+    //Méthode de valisation du format codeUE
     private boolean isValidCodeUE(String codeUE) {
         String regex = "^S0\\d{1}[A-B]\\d{3}$"; 
         Pattern pattern = Pattern.compile(regex);
